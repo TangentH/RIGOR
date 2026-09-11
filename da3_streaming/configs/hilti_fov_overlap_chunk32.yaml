@@ -1,0 +1,99 @@
+Weights:
+  DA3: ./weights/model.safetensors
+  DA3_CONFIG: ./weights/config.json
+  SALAD: ./weights/dino_salad.ckpt
+Model:
+  chunk_size: 32
+  overlap: 16
+  loop_chunk_size: 20
+  loop_enable: false
+  useDBoW: false
+  delete_temp_files: true
+  align_lib: triton
+  align_method: sim3
+  scale_compute_method: auto
+  align_type: dense
+  ref_view_strategy: saddle_balanced
+  ref_view_strategy_loop: saddle_balanced
+  depth_threshold: 15.0
+  save_depth_conf_result: false
+  save_debug_info: false
+  confidence_zero_mask_dir: null
+  confidence_zero_mask_strict: false
+  Yaw4_Pose_Filter:
+    enabled: false
+    yaw_group_size: 4
+    max_frame_group_dist: 0.1
+    max_median_group_max: 0.1
+    rig_repair_before_alignment: false
+    rig_repair_after_alignment: true
+    rig_paired_baseline_export: true
+    rig_repair_loop_predictions: false
+    rig_rotation_threshold_deg: 5.0
+    rig_center_depth_ratio: 0.05
+    rig_min_inliers: 3
+    rig_validate_overlap: true
+    rig_overlap_pixel_stride: 4
+    rig_overlap_ray_tolerance_pixels: 1.5
+    rig_overlap_confidence_quantile: 0.25
+    rig_overlap_max_depth: 15.0
+    rig_overlap_min_matched_rays: 100
+    rig_overlap_max_median_ratio: 1.0
+    rig_overlap_max_p90_ratio: 1.0
+    rig_reject_unrecoverable_group: false
+    rig_check_orientation: true
+    rig_outlier_action: repair
+  Sparse_Align:
+    keypoint_select: orb
+    keypoint_num: 5000
+  IRLS:
+    delta: 0.1
+    max_iters: 5
+    tol: 1e-9
+  Pointcloud_Save:
+    sample_ratio: 0.05
+    conf_threshold_coef: 0.75
+    # Publish each global input from the same canonical overlapping context
+    # already used by camera-pose and depth/confidence outputs.
+    canonical_overlap_ownership: true
+Loop:
+  SALAD:
+    image_size:
+    - 336
+    - 336
+    batch_size: 32
+    # Historical single-image candidate cutoff. Capture-cyclic mode uses the
+    # separate multi-view consensus block below.
+    single_view_similarity_threshold: 0.85
+    top_k: 20
+    min_frame_gap: 160
+    use_nms: true
+    nms_threshold: 25
+  SIM3_Optimizer:
+    lang_version: python
+    max_iterations: 30
+    lambda_init: 1e-6
+  GeometryVerification:
+    enabled: false
+    max_side_alignment_error: 0.25
+    min_scale: 0.8
+    max_scale: 1.25
+    min_rig_acceptance: 0.8
+    cross_side_dense:
+      # The gate is opt-in until thresholds have been calibrated on real runs.
+      # Diagnostics can be recorded independently without changing acceptance.
+      enabled: false
+      record_diagnostics: false
+      confidence_quantile: 0.75
+      min_confidence: 0.0
+      voxel_size: 0.10
+      max_points_per_side: 30000
+      preselection_multiplier: 8
+      trim_quantile: 0.90
+      overlap_distance: 0.25
+      min_points_per_side: 100
+      min_mutual_count: 100
+      max_mutual_trimmed_rmse: 0.25
+      max_mutual_median: 0.15
+      min_overlap_a_to_b: 0.35
+      min_overlap_b_to_a: 0.35

@@ -1,0 +1,9 @@
+# Portable defaults. Put server-specific overrides in the ignored
+# hilti_paths.local.yaml or set HILTI_PATHS_CONFIG=/absolute/path/to/file.
+# Tokens: {repo}, {user}, and ~.
+
+data_root: "{repo}/data"
+scratch_root: "{repo}/.runtime/scratch"
+output_root: "{repo}/outputs/da3"
+workflow_config_dir: "{repo}/.runtime/workflow_configs/da3"
+results_root: "{repo}/outputs"

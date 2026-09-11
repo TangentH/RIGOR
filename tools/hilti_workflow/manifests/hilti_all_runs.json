@@ -1,0 +1,216 @@
+{
+  "description": "All 30 HILTI runs from init_gt_poses.csv. Runtime schedulers may reorder pending work without changing this benchmark universe.",
+  "source_run_manifest": "hilti-trimble-slam-challenge-2026/groundtruth/init_gt_poses.csv",
+  "runs": [
+    {
+      "run_name": "floor_1_2025-05-05_run_1",
+      "relative_path": "floor_1/2025-05-05/run_1",
+      "floor": "floor_1",
+      "date": "2025-05-05",
+      "run": 1
+    },
+    {
+      "run_name": "floor_1_2025-07-07_run_1",
+      "relative_path": "floor_1/2025-07-07/run_1",
+      "floor": "floor_1",
+      "date": "2025-07-07",
+      "run": 1
+    },
+    {
+      "run_name": "floor_1_2025-12-02_run_1",
+      "relative_path": "floor_1/2025-12-02/run_1",
+      "floor": "floor_1",
+      "date": "2025-12-02",
+      "run": 1
+    },
+    {
+      "run_name": "floor_2_2025-05-05_run_1",
+      "relative_path": "floor_2/2025-05-05/run_1",
+      "floor": "floor_2",
+      "date": "2025-05-05",
+      "run": 1
+    },
+    {
+      "run_name": "floor_2_2025-10-28_run_1",
+      "relative_path": "floor_2/2025-10-28/run_1",
+      "floor": "floor_2",
+      "date": "2025-10-28",
+      "run": 1
+    },
+    {
+      "run_name": "floor_2_2025-10-28_run_2",
+      "relative_path": "floor_2/2025-10-28/run_2",
+      "floor": "floor_2",
+      "date": "2025-10-28",
+      "run": 2
+    },
+    {
+      "run_name": "floor_2_2025-12-02_run_1",
+      "relative_path": "floor_2/2025-12-02/run_1",
+      "floor": "floor_2",
+      "date": "2025-12-02",
+      "run": 1
+    },
+    {
+      "run_name": "floor_2_2025-12-03_run_1",
+      "relative_path": "floor_2/2025-12-03/run_1",
+      "floor": "floor_2",
+      "date": "2025-12-03",
+      "run": 1
+    },
+    {
+      "run_name": "floor_3_2025-05-19_run_1",
+      "relative_path": "floor_3/2025-05-19/run_1",
+      "floor": "floor_3",
+      "date": "2025-05-19",
+      "run": 1
+    },
+    {
+      "run_name": "floor_3_2025-12-02_run_1",
+      "relative_path": "floor_3/2025-12-02/run_1",
+      "floor": "floor_3",
+      "date": "2025-12-02",
+      "run": 1
+    },
+    {
+      "run_name": "floor_4_2025-05-19_run_1",
+      "relative_path": "floor_4/2025-05-19/run_1",
+      "floor": "floor_4",
+      "date": "2025-05-19",
+      "run": 1
+    },
+    {
+      "run_name": "floor_4_2025-12-02_run_1",
+      "relative_path": "floor_4/2025-12-02/run_1",
+      "floor": "floor_4",
+      "date": "2025-12-02",
+      "run": 1
+    },
+    {
+      "run_name": "floor_5_2025-12-02_run_1",
+      "relative_path": "floor_5/2025-12-02/run_1",
+      "floor": "floor_5",
+      "date": "2025-12-02",
+      "run": 1
+    },
+    {
+      "run_name": "floor_6_2025-06-18_run_1",
+      "relative_path": "floor_6/2025-06-18/run_1",
+      "floor": "floor_6",
+      "date": "2025-06-18",
+      "run": 1
+    },
+    {
+      "run_name": "floor_6_2025-07-07_run_1",
+      "relative_path": "floor_6/2025-07-07/run_1",
+      "floor": "floor_6",
+      "date": "2025-07-07",
+      "run": 1
+    },
+    {
+      "run_name": "floor_6_2025-12-02_run_1",
+      "relative_path": "floor_6/2025-12-02/run_1",
+      "floor": "floor_6",
+      "date": "2025-12-02",
+      "run": 1
+    },
+    {
+      "run_name": "floor_6_2025-12-02_run_2",
+      "relative_path": "floor_6/2025-12-02/run_2",
+      "floor": "floor_6",
+      "date": "2025-12-02",
+      "run": 2
+    },
+    {
+      "run_name": "floor_7_2025-12-02_run_1",
+      "relative_path": "floor_7/2025-12-02/run_1",
+      "floor": "floor_7",
+      "date": "2025-12-02",
+      "run": 1
+    },
+    {
+      "run_name": "floor_7_2025-12-02_run_2",
+      "relative_path": "floor_7/2025-12-02/run_2",
+      "floor": "floor_7",
+      "date": "2025-12-02",
+      "run": 2
+    },
+    {
+      "run_name": "floor_7_2025-12-03_run_1",
+      "relative_path": "floor_7/2025-12-03/run_1",
+      "floor": "floor_7",
+      "date": "2025-12-03",
+      "run": 1
+    },
+    {
+      "run_name": "floor_EG_2025-10-16_run_1",
+      "relative_path": "floor_EG/2025-10-16/run_1",
+      "floor": "floor_EG",
+      "date": "2025-10-16",
+      "run": 1
+    },
+    {
+      "run_name": "floor_EG_2025-12-02_run_1",
+      "relative_path": "floor_EG/2025-12-02/run_1",
+      "floor": "floor_EG",
+      "date": "2025-12-02",
+      "run": 1
+    },
+    {
+      "run_name": "floor_EG_2025-12-02_run_2",
+      "relative_path": "floor_EG/2025-12-02/run_2",
+      "floor": "floor_EG",
+      "date": "2025-12-02",
+      "run": 2
+    },
+    {
+      "run_name": "floor_UG1_2025-05-19_run_1",
+      "relative_path": "floor_UG1/2025-05-19/run_1",
+      "floor": "floor_UG1",
+      "date": "2025-05-19",
+      "run": 1
+    },
+    {
+      "run_name": "floor_UG1_2025-06-18_run_1",
+      "relative_path": "floor_UG1/2025-06-18/run_1",
+      "floor": "floor_UG1",
+      "date": "2025-06-18",
+      "run": 1
+    },
+    {
+      "run_name": "floor_UG1_2025-10-16_run_1",
+      "relative_path": "floor_UG1/2025-10-16/run_1",
+      "floor": "floor_UG1",
+      "date": "2025-10-16",
+      "run": 1
+    },
+    {
+      "run_name": "floor_UG1_2025-12-02_run_1",
+      "relative_path": "floor_UG1/2025-12-02/run_1",
+      "floor": "floor_UG1",
+      "date": "2025-12-02",
+      "run": 1
+    },
+    {
+      "run_name": "floor_UG1_2025-12-02_run_2",
+      "relative_path": "floor_UG1/2025-12-02/run_2",
+      "floor": "floor_UG1",
+      "date": "2025-12-02",
+      "run": 2
+    },
+    {
+      "run_name": "floor_UG1_2025-12-03_run_1",
+      "relative_path": "floor_UG1/2025-12-03/run_1",
+      "floor": "floor_UG1",
+      "date": "2025-12-03",
+      "run": 1
+    },
+    {
+      "run_name": "floor_UG2_2025-12-02_run_1",
+      "relative_path": "floor_UG2/2025-12-02/run_1",
+      "floor": "floor_UG2",
+      "date": "2025-12-02",
+      "run": 1
+    }
+  ]
+}

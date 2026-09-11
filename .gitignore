@@ -1,0 +1,67 @@
+# Python and build products
+__pycache__/
+*.py[cod]
+*.egg-info/
+/build/
+/dist/
+.pytest_cache/
+.coverage
+htmlcov/
+.tox/
+.ipynb_checkpoints/
+
+# Editor and OS metadata
+.DS_Store
+.vscode/
+.idea/
+
+# Local configuration, credentials, and external dependencies
+.env
+.env.*
+!.env.example
+hilti_paths.local.yaml
+/.external/
+/.private/
+/.runtime/
+*credentials*.json
+*service-account*.json
+
+# Local datasets, workspaces, and results
+/data/
+/outputs/
+/results/
+/artifacts/
+/workspace/
+/work/
+/logs/
+/recovery_bundle/
+/experiment_artifacts/
+/gradio_workspace/
+/eval_workspace/
+/.gradio/
+/docs/experiment_artifacts/
+/docs/meeting_assets/
+/tools/hilti_workflow/experimental/
+/tools/hilti_workflow/reporting/
+
+# Generated geometry, video, models, and raw captures
+*.ply
+*.pcd
+*.las
+*.laz
+*.glb
+*.obj
+*.mp4
+*.mov
+*.avi
+*.npz
+*.npy
+*.pt
+*.pth
+*.ckpt
+*.safetensors
+*.db3
+*.bag
+*.log
+*.zip
+/da3_streaming/weights/

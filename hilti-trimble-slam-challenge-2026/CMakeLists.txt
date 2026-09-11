@@ -1,0 +1,89 @@
+cmake_minimum_required(VERSION 3.8)
+project(challenge_tools_ros)
+
+set(CMAKE_CXX_STANDARD 17)
+if(NOT CMAKE_CONFIGURATION_TYPES AND NOT CMAKE_BUILD_TYPE)
+  set(CMAKE_BUILD_TYPE Release)
+endif()
+if(CMAKE_COMPILER_IS_GNUCXX OR CMAKE_CXX_COMPILER_ID MATCHES "Clang")
+  add_compile_options(-Wall -Wextra -Wpedantic)
+endif()
+
+include_directories(include)
+
+# Stop build warnings related to missing IO components
+set(PCL_FIND_QUIETLY ON)
+
+# ## System dependencies are found with CMake's conventions
+find_package(ament_cmake REQUIRED)
+find_package(cv_bridge REQUIRED)
+find_package(OpenCV REQUIRED COMPONENTS core)
+find_package(PCL REQUIRED COMPONENTS common io filters kdtree surface visualization)
+find_package(Eigen3 REQUIRED)
+find_package(pcl_conversions REQUIRED)
+find_package(tf2_ros REQUIRED)
+find_package(tf2_eigen REQUIRED)
+find_package(nav_msgs REQUIRED)
+find_package(std_srvs REQUIRED)
+
+# Add include directories
+include_directories(
+  include
+  SYSTEM ${EIGEN3_INCLUDE_DIRS}
+)
+
+
+#############
+## Install ##
+#############
+
+ament_python_install_package(${PROJECT_NAME})
+
+install(PROGRAMS
+  challenge_tools_ros/bag_helper/image_stitching.py
+  challenge_tools_ros/bag_helper/ros2bag_to_euroc.py
+  challenge_tools_ros/bag_helper/ros2bag_to_ros1bag.py
+  
+  challenge_tools_ros/gt_helper/challenge_tools_lib.py
+  challenge_tools_ros/gt_helper/groundtruth_server.py
+  challenge_tools_ros/gt_helper/static_transform_publisher.py
+  challenge_tools_ros/gt_helper/trajectory_logger.py
+  challenge_tools_ros/gt_helper/trajectory_plotter.py
+  
+  challenge_tools_ros/runtime_helper/apply_image_mask.py
+  challenge_tools_ros/runtime_helper/image_conversion_node.py
+  challenge_tools_ros/runtime_helper/map_server.py
+  challenge_tools_ros/runtime_helper/rotate_image_180.py
+
+  DESTINATION lib/${PROJECT_NAME}
+)
+
+#install(TARGETS 
+#  pointcloud_to_pcd
+#  DESTINATION lib/${PROJECT_NAME}
+#)
+
+## Mark cpp header files for installation
+#install(DIRECTORY include/
+#        DESTINATION include
+#        FILES_MATCHING PATTERN "*.hpp" PATTERN "*.h")
+
+install(
+  DIRECTORY config launch
+  DESTINATION share/${PROJECT_NAME}
+)
+
+install(
+  DIRECTORY floorplans groundtruth
+  DESTINATION share/${PROJECT_NAME}
+  FILES_MATCHING PATTERN "*.png"
+                 PATTERN "*.txt"
+                 PATTERN "*.csv"
+)
+
+#ament_export_include_directories(include)
+#ament_export_libraries(
+#  INSERT LIBRARY HERE
+#)
+ament_export_dependencies(Eigen3)
+ament_package()

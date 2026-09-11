@@ -1,0 +1,8 @@
+# Copy this file to hilti_paths.local.yaml and edit only the paths below.
+# The token {user} expands to the current system user and ~ expands to HOME.
+
+data_root: /path/to/hilti/data
+scratch_root: /path/to/work/hilti_data
+output_root: /path/to/hilti/outputs/da3
+workflow_config_dir: /path/to/work/hilti_workflow_configs/da3
+results_root: /path/to/hilti/outputs

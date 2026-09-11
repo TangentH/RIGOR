@@ -1,0 +1,4 @@
+<launch>
+  <node pkg="rviz2" exec="rviz2" name="rviz2_map_server" args="-d $(find-pkg-share challenge_tools_ros)/config/rviz/rviz_map_server.rviz"  />
+  
+</launch>

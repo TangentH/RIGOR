@@ -1,0 +1,93 @@
+group "1.openvins" {
+    cmd "openvins" {
+        exec = "ros2 launch challenge_tools_ros run_openvins.launch.py config:=hilti_openvins";
+        host = "localhost";
+    }
+}
+
+group "2.map_to_global" {
+    cmd "map_to_global-floor_1-2025-05-05-run_1" {
+        exec = "ros2 run tf2_ros static_transform_publisher 36.15 22 1  1.71 0 0  map global";
+        host = "localhost";
+    }
+    cmd "map_to_global-floor_2-2025-05-05-run_1" {
+        exec = "ros2 run tf2_ros static_transform_publisher 36.25 20.35 1  0.66 0 0  map global";
+        host = "localhost";
+    }
+    cmd "map_to_global-floor_2-2025-10-28-run_1" {
+        exec = "ros2 run tf2_ros static_transform_publisher 39.5 11.25 1  0.8 0 0  map global";
+        host = "localhost";
+    }
+}
+
+group "3.visualization" {
+    cmd "rviz_ov" {
+        exec = "ros2 launch challenge_tools_ros rviz_ov.launch";
+        host = "localhost";
+    }
+    cmd "rviz_ov_and_map_server" {
+        exec = "ros2 launch challenge_tools_ros rviz_ov_and_map_server.launch";
+        host = "localhost";
+    }
+}
+
+group "4.floorplan_map_server" {
+    cmd "floor_1" {
+        exec = "ros2 launch challenge_tools_ros map_server.launch filename:=floor_1.png";
+        host = "localhost";
+    }
+    cmd "floor_2" {
+        exec = "ros2 launch challenge_tools_ros map_server.launch filename:=floor_2.png";
+        host = "localhost";
+    }
+    cmd "floor_UG" {
+        exec = "ros2 launch challenge_tools_ros map_server.launch filename:=floor_UG.png";
+        host = "localhost";
+    }
+}
+
+group "5.groundtruth_server" {
+    cmd "gt_floor_1_2025-05-05_run_1" {
+        exec = "ros2 launch challenge_tools_ros groundtruth_server.launch run_name:=floor_1_2025-05-05_run_1";
+        host = "localhost";
+    }
+    cmd "gt_floor_2_2025-05-05_run_1" {
+        exec = "ros2 launch challenge_tools_ros groundtruth_server.launch run_name:=floor_2_2025-05-05_run_1";
+        host = "localhost";
+    }
+    cmd "gt_floor_2_2025-10-28_run_1" {
+        exec = "ros2 launch challenge_tools_ros groundtruth_server.launch run_name:=floor_2_2025-10-28_run_1";
+        host = "localhost";
+    }
+    cmd "gt_floor_2_2025-10-28_run_2" {
+        exec = "ros2 launch challenge_tools_ros groundtruth_server.launch run_name:=floor_2_2025-10-28_run_2";
+        host = "localhost";
+    }
+    cmd "gt_floor_UG_2025-10-16_run_1" {
+        exec = "ros2 launch challenge_tools_ros groundtruth_server.launch run_name:=floor_UG_2025-10-16_run_1";
+        host = "localhost";
+    }
+}
+
+group "5.misc" {
+    cmd "rotate_tool" {
+        exec = "ros2 run challenge_tools_ros rotate_image_180.py /cam0/image_raw/compressed compressed";
+        host = "localhost";
+    }
+}
+
+
+script "launch_openvins_and_gui" {
+    start cmd "openvins";
+    wait ms 5000;
+    start cmd "rviz_ov_and_map_server";
+}
+
+
+script "stop_all" {
+    stop group "1.openvins";
+    stop group "2.map_to_global";
+    stop group "3.visualization";
+    stop group "4.floorplan_map_server";
+    stop group "5.misc";
+}

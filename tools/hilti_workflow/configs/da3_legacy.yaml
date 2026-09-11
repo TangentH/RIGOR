@@ -1,0 +1,105 @@
+# Frozen scientific configuration for the DA3-Legacy paper comparator.
+#
+# Run-local paths are injected by the workflow runner. Disabled outcome-audit
+# and visualization-only stages from the archived workflow are omitted here;
+# all retained scientific settings match the archived effective configuration.
+
+confidence_zero_masks:
+  prompt: person.helmet.
+  box_threshold: 0.3
+  text_threshold: 0.3
+  mask_close_pixels: 3
+  mask_dilate_pixels: 5
+  grounding_batch_size: 2
+  hf_grounding_model: IDEA-Research/grounding-dino-base
+  hf_grounding_revision: 12bdfa3120f3e7ec7b434d90674b3396eccf88eb
+extraction:
+  stride: 10
+  max_equirect_frames: 0
+  progress_interval_s: 5.0
+pinhole:
+  width: 768
+  height: 512
+  fov_deg: 95.0
+  yaws: 0,90,180,270
+  imu_method: complementary
+  imu_tau: 2.0
+  accel_gate_sigma: 0.2
+  progress_interval_s: 5.0
+  rotate180: true
+reconstruction:
+  chunk_size: 32
+  overlap: 16
+  delete_temp_files: false
+  process_res: 504
+  process_res_method: upper_bound_resize
+  sample_ratio: 0.05
+  conf_threshold_coef: 0.75
+  canonical_overlap_ownership: true
+  loop_enable: true
+  loop_chunk_size: 20
+  loop_min_frame_gap: 160
+  loop_single_view_similarity_threshold: 0.85
+  loop_top_k: 20
+  loop_candidate_mode: image
+  loop_capture_cyclic_consensus:
+    mean_similarity_threshold: 0.65
+    min_view_similarity: 0.45
+    support_similarity: 0.5
+    min_support_views: 4
+  loop_pose_graph_fix_scale: false
+  loop_geometry_verification:
+    enabled: false
+    max_side_alignment_error: 0.25
+    min_scale: 0.8
+    max_scale: 1.25
+    min_rig_acceptance: 0.8
+    cross_side_dense:
+      enabled: false
+      record_diagnostics: false
+      confidence_quantile: 0.75
+      min_confidence: 0.0
+      voxel_size: 0.1
+      max_points_per_side: 30000
+      preselection_multiplier: 8
+      trim_quantile: 0.9
+      overlap_distance: 0.25
+      min_points_per_side: 100
+      min_mutual_count: 100
+      max_mutual_trimmed_rmse: 0.25
+      max_mutual_median: 0.15
+      min_overlap_a_to_b: 0.35
+      min_overlap_b_to_a: 0.35
+  yaw4_pose_filter:
+    enabled: false
+    yaw_group_size: 4
+    max_frame_group_dist: 0.1
+    max_median_group_max: 0.1
+    rig_repair_before_alignment: false
+    rig_repair_after_alignment: false
+    rig_paired_baseline_export: false
+    rig_repair_loop_predictions: false
+    rig_center_depth_ratio: 0.05
+    rig_rotation_threshold_deg: 5.0
+    rig_min_inliers: 3
+    rig_validate_overlap: true
+    rig_overlap_pixel_stride: 4
+    rig_overlap_ray_tolerance_pixels: 1.5
+    rig_overlap_confidence_quantile: 0.25
+    rig_overlap_max_depth: 15.0
+    rig_overlap_min_matched_rays: 100
+    rig_overlap_max_median_ratio: 1.0
+    rig_overlap_max_p90_ratio: 1.0
+    rig_reject_unrecoverable_group: false
+    rig_check_orientation: true
+    rig_outlier_action: detect
+  base_da3_config: da3_streaming/configs/hilti_fov_overlap_chunk32.yaml
+  reuse_existing_unaligned_chunks: true
+  skip_aligned_cache_write: true
+pointcloud_clean:
+  enabled: true
+  voxel_size: 0.05
+  min_points_per_voxel: 2
+  min_occupied_neighbor_voxels: 3
+  neighbor_connectivity: '26'
+  save_removed: false
