@@ -1,11 +1,15 @@
 <div align="center">
 
-# RIGOR
-### Rig-Informed Geometry for Omnidirectional Reconstruction
 
-**Long-sequence reconstruction from gravity-aligned panoramas with a frozen perspective backbone.**
+<h1> RIGOR: Rig-Informed Geometry for Omnidirectional Reconstruction </h1>
+<p> Tingjun Huang, Dmitry Rudshin, Mathieu Meyer, Pietro Bonazzi, Marc Pollefeys, Emilia Szymańska </p>
+
+[<img src="https://img.shields.io/badge/Home_Page-red" alt="Home Page">](https://tangenth.github.io/RIGOR-project-page/)
+[<img src="https://img.shields.io/badge/arXiv-2609.13504-b31b1b" alt="arXiv">](https://arxiv.org/abs/2609.13504)
 
 [Installation](#installation) · [Reconstruction](#reconstruction) · [Evaluation](#evaluation) · [Reproducibility](docs/REPRODUCIBILITY.md)
+
+**Long-sequence reconstruction from gravity-aligned panoramas with a frozen perspective backbone.**
 
 ![RIGOR overview](assets/teaser.png)
 
@@ -114,6 +118,20 @@ tools/hilti_workflow/    Preprocessing, method runners, and evaluation
 tools/reproducibility/  Environment and asset checks
 assets/                 Paper illustrations
 docs/                   Reproduction and output guides
+```
+
+## Citation 
+If you find this dataset useful, please consider giving it a ⭐ and citing it in your work.
+```bibtex
+@misc{huang2026rigor,
+      title={RIGOR: Rig-Informed Geometry for Omnidirectional Reconstruction}, 
+      author={Tingjun Huang and Dmitry Rudshin and Mathieu Meyer and Pietro Bonazzi and Marc Pollefeys and Emilia Szymańska},
+      year={2026},
+      eprint={2609.13504},
+      archivePrefix={arXiv},
+      primaryClass={cs.CV},
+      url={https://arxiv.org/abs/2609.13504}, 
+}
 ```
 
 ## Acknowledgements and license
