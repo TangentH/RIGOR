@@ -2,7 +2,8 @@
 
 
 <h1> RIGOR: Rig-Informed Geometry for Omnidirectional Reconstruction </h1>
-<p> Tingjun Huang, Dmitry Rudshin, Mathieu Meyer, Pietro Bonazzi, Marc Pollefeys, Emilia Szymańska </p>
+<p> Tingjun Huang<sup>1</sup>, Dmitry Rudshin<sup>1</sup>, Mathieu Meyer<sup>1</sup>, Pietro Bonazzi<sup>1</sup>, Marc Pollefeys<sup>1,2</sup>, Emilia Szymańska<sup>3</sup></p>
+<p><sup>1</sup>ETH Zürich, <sup>2</sup>Microsoft, <sup>3</sup>Hilti</p>
 
 [<img src="https://img.shields.io/badge/Home_Page-red" alt="Home Page">](https://tangenth.github.io/RIGOR-project-page/)
 [<img src="https://img.shields.io/badge/arXiv-2609.13504-b31b1b" alt="arXiv">](https://arxiv.org/abs/2609.13504)
