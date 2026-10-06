@@ -7,11 +7,12 @@
 [<img src="https://img.shields.io/badge/Home_Page-red" alt="Home Page">](https://tangenth.github.io/RIGOR-project-page/)
 [<img src="https://img.shields.io/badge/arXiv-2609.13504-b31b1b" alt="arXiv">](https://arxiv.org/abs/2609.13504)
 
-[Installation](#installation) · [Reconstruction](#reconstruction) · [Evaluation](#evaluation) · [Reproducibility](docs/REPRODUCIBILITY.md)
+
+![RIGOR overview](assets/teaser.png)
 
 **Long-sequence reconstruction from gravity-aligned panoramas with a frozen perspective backbone.**
 
-![RIGOR overview](assets/teaser.png)
+[Installation](#installation) · [Reconstruction](#reconstruction) · [Evaluation](#evaluation) · [Reproducibility](docs/REPRODUCIBILITY.md)
 
 </div>
 
@@ -20,6 +21,7 @@ shared optical center and known relative orientations. Rig consistency supports
 local pose/pointmap repair and cyclic capture-level loop retrieval, followed by
 joint geometric verification and Sim(3) graph optimization. All learned weights
 remain frozen.
+
 
 ## Installation
 
